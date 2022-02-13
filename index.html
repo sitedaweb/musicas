@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+              <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<meta name="description" content="Reprodutor de música com suporte à gestos">
+		<meta name="author"  content="William Humbwavali" >
+		<link rel="stylesheet" href="estilo.css">
+             
+
+		<title>Reprodutor de música</title>
+	</head>
+	<body>
+		<div id="container-pesquisa"> <div class="area-pesquisa" >
+				<input maxLength="50" placeholder="Procurar..."  id="pesquisar"  type="text">
+				<button class="btn-cancelar">cancelar</button>
+			</div> 
+                    </div>
+			<nav class="nav" >
+				<div class="navMusica mdn" >
+					<a href="#containerMusica">
+						<i class='bx bx-home'></i>
+						<br/>
+						<span>Início</span>
+					</a>
+				</div>
+			
+				<div class="navFavorito mdn" >
+					<a href="#container-favoritos">
+						<i class='bx bx-heart'></i>
+						<br/>
+						<span>Favoritos</span>
+					</a>
+				</div>
+				
+				<div class="navConf mdn" >
+					<a href="#container-configuracao">
+						<i class='bx bx-cog'></i>
+						<br/>
+						<span>Configuração</span>
+						
+					</a>
+				</div>
+			</nav>
+		
+		<main class="corpo" >
+
+		<div class="slider" >
+			<div id="containerMusica">
+				<div class="musica-atual" >
+                                 <div class="fundo-msa"><img width="100%"/></div>
+					<div class="pp" >
+						<i class="play bx bx-pause"></i>
+					</div>
+					<div id="titulo--musica-atual" ></div>
+					<div></div>
+				</div>
+                    </div>
+			<div id="container-favoritos">
+				<span style="font-family: futura, ps;" id="info-f">Sem músicas</span>
+			</div> 
+                   
+			<div id="container-configuracao" >
+			
+				<div id="idioma" >
+					<span class="titulo--difinicao" >Idioma</span>
+					<span class="opcao" >
+						<select name="idioma" >
+							<option value="pt" >pt-BR</option>
+							<option value="en" >en-US</option>
+						</select>
+					</span>
+				</div>
+                          
+				<div id="modo-escuro" >
+					<span class="titulo--difinicao" >Modo escuro</span>
+					<span class="opcao" >
+						<input type="checkbox" id="i">
+						<label for="i"><i></i></label>
+					</span>
+				</div>
+		
+				<div></div>
+
+				
+				<div class="informacoes" >
+					<span class="titulo--difinicao" >Informações</span>
+					<span class="opcao" >
+						<svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+							<path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
+						</svg>
+					</span>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="musica-atual-tela-cheia" >
+			<div id="area-de-rolagem" >
+				<div id="rolagem" >
+					<div class="barra" ></div>
+				</div>
+				
+				<div class="card" >
+					<div class="titulo">---</div>
+				
+					<div class="img">
+						<img scr=""/>
+					</div>
+                                 <div id="fechar-TC">&times; </div>
+					<audio></audio>
+				</div>
+                          <div id="estado-da-musica">
+                             <div class="aleatorio"><i class="bx bx-shuffle"></i></div>
+				  <div class="add-f"><i class="bx bx-heart"></i></div>
+                              <div class="loop"><i class="bx bx-repeat"></i></div>
+                           </div>
+			</div>
+				
+				
+				<div id="estado" >
+					<div id="anterior"><i class="bx bx-skip-previous"></i></div>
+					<div class="pp" >
+						<i class="play bx bx-play"></i>
+					</div>
+					<div id="proximo"><i class="bx bx-skip-next"></i></div>
+					<div id="idD" >
+						<div id="tempoAtual" >00:00</div>
+						<div id="duracaoFinal" ></div>
+					</div>
+					<div id="duracao" ><input id="variedade"  class="range" type="range" min="0" max="100" value="0" step="1"  /></div>
+				<div id="container-volume" >
+					<div id="minimo"><i class="bx bx-volume"></i></div>
+					<input id="volume"  class="range" type="range" min="0" max="100" value="100" step="1"  />
+					<div id="maximo"><i class="bx bx-volume-full"></i></div>
+				</div>
+				</div>
+				
+			</div>
+			
+		</main>
+		
+		<script src="script.js"></script>
+              
+
+	</body>
+</html>
