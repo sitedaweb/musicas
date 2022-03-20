@@ -3,40 +3,10 @@ if (navigator.platform == "iPhone") {
 	document.getElementById('container-volume').style.display = "none";
 }
 var musicas = [
-	{titulo: "u're mine", img: "shilohdynasty.PNG", favorito: false, artista: "Shiloh dynasty", ft: "", fundo: "", caminho: "uremine.mp3"},
-	{titulo: "i’ll always be waiting for you", fundo: "", favorito: false, artista: "Shiloh dynasty", ft:"", img: "shilohdynasty.PNG", caminho: "illalwaysbewaitingforyou.mp3"},
 	{titulo: "his hers", fundo: "hisherscapa.JPG", favorito: false, artista: "internet money", ft: "don toliver, gunna & lil uzi vert", img: "internetmoneylogo.JPEG", caminho: "hishers.mp3"},
-	{titulo: "imagination", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "imagination.mp3"},
-	{titulo: "trust nobody", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "trustnobody.mp3"},
-	{titulo: "Empty hearts", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "emptyhearts.mp3"},
-	{titulo: "sing to you", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "singtoyou.mp3"},
-	{titulo: "revenge", fundo: "tentacioncapa.JPG", artista: "xxxtentacion", ft: "", img: "xxxtentacion.jpg", favorito: false, caminho: "revenge.mp3"},
 	{titulo: "fuck love", fundo: "tentacioncapa.JPG", artista: "xxxtentacion", ft: "trippie redd", favorito: false, img: "xxxtentacion.jpg", caminho: "fucklove.mp3"},
-	{titulo: "Feen", fundo: "", artista: "luh kel", ft: "trippie redd", favorito: false, img: "luhkel.JPG", caminho: "feen.mp3"},
-	{titulo: "wishing well", fundo: "lengedsneverdie.PNG", artista: "juice wrld", ft: "", favorito: false, img: "juicewrld.JPEG", caminho: "wishingwell.mp3"},
-	{titulo: "armed and dangerous", fundo: "", artista: "juice wrld", ft: "", favorito: false, img: "juicewrld.JPEG", caminho: "armedanddangerous.mp3"},
 	{titulo: "smile", fundo: "lengedsneverdie.PNG", artista: "juice wrld", ft: "the weeknd", favorito: false, img: "juicewrld.JPEG", caminho: "smile.mp3"},
-	{titulo: "Going down", fundo: "", artista: "xxxtentacion", ft: "", favorito: false, img: "xxxtentacion.jpg", caminho: "goingdown.mp3"},
-	{titulo: "Percaholic", fundo: "", artista: "Juice WRLD", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "percaholic.mp3"},
-	{titulo: "Tales of the toxic", fundo: "", artista: "Juice wrld", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "talesofthetoxic.mp3"},
-	{titulo: "I’ll keep you safe ", fundo: "", artista: "Shiloh Dynasty", ft: "", favorito: false, img: "shilohdynasty.PNG", caminho: "illkeepyousafe.mp3"},
-	{titulo: "Angel", fundo: "", artista: "xxxtentacion", ft: "shiloh dynasty", favorito: false, img: "xxxtentacion.jpg", caminho: "angel.mp3"},
-	{titulo: "Danny Phantom", fundo: "trippiereddcapa.PNG", artista: "Trippie redd", ft: "xxxtentacion", favorito: false, img: "trippie.JPG", caminho: "dannyphantom.mp3"},
-	{titulo: "True Love", fundo: "", artista: "Juice wrld", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "truelove.mp3"},
-	{titulo: "Die for you", fundo: "", artista: "the weeknd", ft: "", favorito: false, img: "theweeknd.JPG", caminho: "dieforyou.mp3"},
-	{titulo: "Holy Smoke", fundo: "holysmokes.JPG", artista: "Trippie redd", ft: "lil uzi vert", favorito: false, img: "trippie.JPG", caminho: "holysmoke.mp3"},
-	{titulo: "Try me", fundo: "", artista: "The weeknd", ft: "", favorito: false, img: "theweeknd.JPG", caminho: "tryme.mp3"},
-       {titulo: "One dance", fundo: "onedance.PNG", artista: "drake", ft: "kyla & wizkid", favorito: false, img: "drake.JPEG", caminho: "onedance.mp3"},
-
-{titulo: "I’m here", fundo: "", artista: "last-dude", ft: "juice wrld, xxxtentacion & lil peep", img: "", favorito: false, caminho: "imhere.mp3"},
-
-{titulo: "need to know", fundo: "", artista: "Doja cat", ft: "", img: "dojacat1.JPEG", favorito: false, caminho: "needtoknow.mp3"},
-{titulo: "holy-smokes", fundo: "holysmokes.JPG", artista: "instrumental", ft: "", img: "", favorito: false, caminho: "holysmokebeat.mp3"},
-
-{titulo: "Moonlight", fundo: "", artista: "xxxtentacion", ft: "", favorito: false, img: "xxxtentacion.jpg", caminho: "moonlight.mp3"},
-
-{titulo: "Maybe", fundo: "", artista: "Juice WRLD", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "maybe.mp3"},
-
+	
 ];
 
 var musicasFavoritas = [];
