@@ -272,6 +272,7 @@ input[type="range"]::-moz-range-thumb {
 	margin-top: 20px;
 	transition: width .30s ease;
 	display: inline-block;
+	
 }
 #pesquisar.modo-escuro {
 	background: rgb(70, 70, 70) url("imagem/pesquisa.PNG") no-repeat 15px 50%;
@@ -283,7 +284,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .nav {
 	position: absolute;
-       bottom: 7px;
+       bottom: 12px;
 	max-height: 70px;
 	border-radius: 10px;
 	left: 2.5%;
@@ -292,8 +293,8 @@ input[type="range"]::-moz-range-thumb {
 	border: none;
 	overflow: hidden;
 	width: 95%;
+	padding: 5px;
        z-index: 100;
-      
 }
 .nav i {
      font-size: 20px;
@@ -360,7 +361,7 @@ label > i {
 	margin-left: 2px;
 	transition: all 0.2s ease-in-out;
 	pointer-events: none;
-	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
 .nav img {width: 25px;}
 	
@@ -418,7 +419,7 @@ input[type="checkbox"]:checked + label:active > i {
        position: absolute;
 	width: 95%;
 	display: flex;
-	overflow: hidden;
+	overflow: hidden !important;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 	height: calc(100% - 140px);
@@ -765,4 +766,7 @@ h3 {
 }
 #containerMusica .play {
     margin-left: 3px;
+}
+#fechar-TC {
+display: none;
 }
