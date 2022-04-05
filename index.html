@@ -19,11 +19,12 @@
 			</div> 
                     </div>
 			<nav class="nav" >
-				<div class="navMusica mdn" >
+				
+			<div class="navMusica mdn" >
 					<a href="#containerMusica">
 						<i class='bx bx-home'></i>
 						<br/>
-						
+						<span>início</span>
 					</a>
 				</div>
 			
@@ -31,7 +32,7 @@
 					<a href="#container-favoritos">
 						<i class='bx bx-heart'></i>
 						<br/>
-					
+					<span>favoritos</span>
 					</a>
 				</div>
 				
@@ -39,10 +40,11 @@
 					<a href="#container-configuracao">
 						<i class='bx bx-cog'></i>
 						<br/>
-						
+						<span>configuração</span>
 						
 					</a>
 				</div>
+			
 			</nav>
 		
 		<main class="corpo" >
@@ -111,23 +113,27 @@
 					<div class="img">
 						<img scr=""/>
 					</div>
-                                 <div id="fechar-TC"><i style="font-size: 35px;" class="bx bx-dots-horizontal-rounded"></i> </div>
+                                 <div id="fechar-TC"><i style="font-size: 30px;" class="bx bx-chevron-down"></i> </div>
+					<div id="abrirLyric"><i style="font-size: 30px;" class="bx bx-menu-alt-right"></i> </div>
 					<audio></audio>
 				</div>
+					
                           <div id="estado-da-musica">
-                             <div class="aleatorio"><i class="bx bx-shuffle"></i></div>
+                         
 				  <div class="add-f"><i class="bx bx-heart"></i></div>
-                              <div class="loop"><i class="bx bx-repeat"></i></div>
+                             
                            </div>
 			</div>
 				
 				
 				<div id="estado" >
+					<div class="aleatorio"><i class="bx bx-shuffle"></i></div>
 					<div id="anterior"><i class="bx bx-skip-previous"></i></div>
 					<div class="pp" >
 						<i class="play bx bx-play"></i>
 					</div>
 					<div id="proximo"><i class="bx bx-skip-next"></i></div>
+					<div class="loop"><i class="bx bx-repeat"></i></div>
 					<div id="idD" >
 						<div id="tempoAtual" >00:00</div>
 						<div id="duracaoFinal" ></div>
@@ -140,8 +146,20 @@
 				</div>
 				</div>
 				
+				<div class="containerLyrics">
+					<div id="fecharLyric"><i style="font-size: 35px;" class="bx bx-chevron-left"></i> </div>
+					<h3 id="l-titulo"></h3>
+					<h4 id="l-artista"></h4>
+					<div class="lyrics"></div>
+					<div style ="position: absolute; z-index: 99999999999999999; right: 20px; width: 55px; height: 55px; border-radius: 50px; background: mediumSlateBlue;" class="pp" >
+						<i class="play bx bx-pause"></i>
+					</div>
+				</div>
+				
+				
 			</div>
-			
+			<div id="msg">Música removida dos favoritos </div>
+	<div id="msg2">Música adicionada aos favoritos</div>
 		</main>
 		
 		<script src="script.js"></script>
