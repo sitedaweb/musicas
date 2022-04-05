@@ -23,6 +23,20 @@ rgb(240, 240, 245);
 	left: 2.5%;
 	height: 30%;
 }
+.aleatorio, .loop {
+	position: absolute;
+	bottom: 30%;
+	font-size: 25px;
+}
+
+.aleatorio {
+	left: 10%;
+}
+.loop {
+	right: 10%;
+
+}
+
 .card {
 	padding: 20px;
 	height: 65%;
@@ -152,7 +166,6 @@ rgb(240, 240, 245);
 	bottom: 20%;
        border-radius: 50%;
        width: 65px;
-       background: rgb(240, 240, 245);
 	height: 65px;
 }
 #estado #proximo i, #estado #anterior i {
@@ -161,22 +174,25 @@ rgb(240, 240, 245);
 
 .pp i {
        margin-left: 2px;
+	font-size: 50px;
+       margin-top: calc((100% - 50px) / 2);
 }
 
 #estado .pp {
 	left: calc((100% - 65px) / 2);
+	background: rgb(240, 240, 245);
 }
-#estado .pp i, #estado #proximo i, #estado #anterior i {
-       font-size: 60px;
+#estado #proximo i, #estado #anterior i {
+       font-size: 55px;
        margin-top: calc((100% - 60px) / 2);
 }
 #proximo {
-	right: 30px;
+	right: 20%;
        text-align: left !important;
 
 }
 #anterior {
-	left: 30px;
+	left: 20%;
 }
 .pp .play {
 	margin-left: 5px;
@@ -282,9 +298,10 @@ input[type="range"]::-moz-range-thumb {
 .marca {
 	color: mediumSpringGreen;
 }
+
 .nav {
 	position: absolute;
-       bottom: 12px;
+       bottom: 10px;
 	max-height: 70px;
 	border-radius: 10px;
 	left: 2.5%;
@@ -293,14 +310,17 @@ input[type="range"]::-moz-range-thumb {
 	border: none;
 	overflow: hidden;
 	width: 95%;
-	padding: 5px;
+	
        z-index: 100;
 }
 .nav i {
      font-size: 20px;
 }
-.nav .ativo {
-	color: mediumslateblue !important;
+.nav a {
+	display: inline-block;
+	height: 100%;
+width: 100%;
+
 }
 .nav div {
 	width: 33.33%;
@@ -308,13 +328,13 @@ input[type="range"]::-moz-range-thumb {
 	text-align: center;
 	height: 100%;
 	font-size: 11px;
-	padding: 10px;
+	padding: 8px;
 	border-radius: 0;
 	overflow: hidden;
 	background: inherit !important;
        color: gray !important;
 }
-.nav div a:active {
+.nav div a:hover {
 
 color: mediumslateblue !important;
 
@@ -618,6 +638,8 @@ a:active {
 	display: none;
 	height: 30px;
 	width: 20%;
+	border-radius: 50px;
+	color: mediumslateblue;
 }
 .fechar-informacoes {
 	position: absolute;
@@ -644,32 +666,50 @@ a:active {
 }
 
 #fechar-TC {
-    font-size: 25px;
-    border-radius: 40px;
-    height: 35px;
-    width: 35px;
+    font-size: 20px;
+   
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    overflow: hidden;
+   
+}
+#abrirLyric {
+   font-size: 20px;
+    height: 30px;
+    width: 30px;
     position: absolute;
     top: 7px;
     right: 10px;
     overflow: hidden;
-    background: rgba(240, 240, 240, 0.2);
+   
+
 }
-#estado-da-musica {
+
+#fecharLyric {
+
+    height: 35px;
+    width: 35px;
     position: absolute;
-    width: 100%;
+    top: 7px;
+    left: 10px;
+    overflow: hidden;
+
+}
+
+.add-f {
+    position: absolute;
+    width: 35px;
     position: absolute;
     bottom: 33%;
-    color: black;
-    left: 0;
+    left: calc((100% - 35px) / 2);
+
 }
-#estado-da-musica > div {
-    display: inline-block;
-    width: 33.33%;
-    border-radius: 20px;
-    float: left;
-}
+
 #estado-da-musica > div i {
-   font-size: 30px;
+   font-size: 35px;
 }
 .loop-1 {
    width: 15px;
@@ -695,12 +735,12 @@ a:active {
           left: 50px;
          
        }
-       #estado-da-musica {
+       .add-f {
           top: calc(42% - 14px);
           left: initial;
-          right: 50px;
+          right: 70px;
           bottom: initial;
-          width: 200px;
+          width: 50px;
          
        }
        .card .titulo {
@@ -711,11 +751,35 @@ a:active {
         }
        
       #proximo {
-         right: 20%;
+         right: 30%;
       }
       #anterior {
-         left: 20%;
+         left: 30%;
       }
+	.nav {
+		
+		left: 10%;
+		width: 80%;
+		
+		
+	}
+	
+
+	.slider {
+		width: 80%;
+		left: 10%;
+	}
+	#containerMusica .musica-atual {
+		width: 80%;
+		left: 10%;
+
+	}
+	#pesquisar {
+		width: 80%;
+		margin-left: 10%;
+		
+	}
+	.btn-cancelar {width: 10%;}
       
 }
 .comeco {
@@ -767,6 +831,148 @@ h3 {
 #containerMusica .play {
     margin-left: 3px;
 }
-#fechar-TC {
-display: none;
+
+.lyrics {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 99999999999;
+	/*background: rgb(192, 82, 82);*/
+	display: block;
+	width: 100%;
+	height: 85%;
+	color: black;
+	background: #feffff;
+	text-align: center;
+	overflow: auto;
+	border-radius: 40px 40px 0 0;
+	padding: 15px;
+	background-image: url('imagem/msc.png');
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-position: left bottom;
+	background-size: 100% auto;
 }
+.containerLyrics {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9999999999999999999;
+	background: ghostwhite;
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: black;
+	display: none;
+	/*background: transparent;*/
+	text-align: center;
+}
+/* load */
+
+.spinner {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+.bubble-1,
+.bubble-2 {
+  position: absolute;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: mediumslateblue;
+}
+
+.bubble-2 {
+  top: auto;
+  bottom: 0;
+}
+
+.l-9 {
+  animation-delay: 1.44s;
+}
+
+.load .spinner {
+  animation: carregando 2s linear infinite;
+}
+.load .bubble-1,
+.load .bubble-2 {
+  animation: bounce 2s ease-in-out infinite;
+}
+.load .bubble-2 {
+  animation-delay: -1s;
+}
+
+
+
+
+@keyframes carregando {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+/*info*/
+
+#msg , #msg2 {
+    	visibility: hidden; 
+    	margin-left: -125px;
+    	background-color: mediumslateblue;
+    	opacity: 0.9;
+    	text-align: center; 
+    	border-radius: 2px;
+    	padding: 16px; 
+    	width: 60%;
+    	position: fixed; 
+    	z-index: 999999999999999;
+    	box-sizing: border-box;
+    	right: 20%;
+    	bottom: 30px;
+    	border-radius: 50px;
+    	user-select: none;
+	
+}
+
+#msg.mostrar, #msg2.mostrar {
+   		visibility: visible;
+ 		-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  		 animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	}
+
+	@-webkit-keyframes fadein {
+  		from {bottom: 0; opacity: 0;}
+  		to {bottom: 30px; opacity: 0.9;}
+	}
+
+	@keyframes fadein {
+  		from {bottom: 0; opacity: 0;}
+  		to {bottom: 30px; opacity: 0.9;}
+	}
+
+	@-webkit-keyframes fadeout {
+  		from {bottom: 30px; opacity: 0.9;}
+  		to {bottom: 0; opacity: 0;}
+	}
+
+	@keyframes fadeout {
+ 		 from {bottom: 30px; opacity: 0.9;}
+  		to {bottom: 0; opacity: 0;}
+	}
+#l-titulo, #l-artista {
+margin: 0;
+font-weight: 400;
+}
+
+
