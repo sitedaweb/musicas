@@ -1,12 +1,77 @@
 /* Olá (@_@) */
+
+// ter letras.
+ 
+
+const load = document.createElement("div");
+
+load.innerHTML='<div class="load"><p>buscando…</p><div class="spinner"><div class="bubble-1"></div><div class="bubble-2"></div></div>';
+
+const LYRICS_API = "https://api.lyrics.ovh/v1/";
+
+const lyrics = document.querySelector(".lyrics");
+
+function getLyrics(cantor, cancao) {
+  const promise = fetch(LYRICS_API + cantor + "/" + cancao);
+
+  if (lyrics.hasChildNodes()) {
+    lyrics.removeChild(lyrics.firstChild);
+  }
+
+  promise
+    .then(function(response) {
+      const processingPromise = response.json();
+      return processingPromise;
+    })
+    .then(function(processedResponse) {
+      var div = document.createElement("div");
+      div.class = "the-lyrics";
+      div.innerText = processedResponse.lyrics || "Nenhuma letra encontrada";
+      lyrics.appendChild(div);
+	lyrics.removeChild(load);
+    });
+}
+
+//
+
 if (navigator.platform == "iPhone") {
 	document.getElementById('container-volume').style.display = "none";
 }
 var musicas = [
-	{titulo: "his hers", fundo: "hisherscapa.JPG", favorito: false, artista: "internet money", ft: "don toliver, gunna & lil uzi vert", img: "internetmoneylogo.JPEG", caminho: "hishers.mp3"},
+	{titulo: "u're mine", img: "shilohdynasty.PNG", favorito: false, artista: "Shiloh dynasty", ft: "", fundo: "", caminho: "uremine.mp3"},
+	{titulo: "i’ll always be waiting for you", fundo: "", favorito: false, artista: "Shiloh dynasty", ft:"", img: "shilohdynasty.PNG", caminho: "illalwaysbewaitingforyou.mp3"},
+	{titulo: "his hers", fundo: "hisherscapa.JPG", favorito: false, artista: "gunna", ft: "don toliver & lil uzi vert", img: "internetmoneylogo.JPEG", caminho: "hishers.mp3"},
+	{titulo: "imagination", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "imagination.mp3"},
+	{titulo: "trust nobody", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "trustnobody.mp3"},
+	{titulo: "Empty hearts", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "emptyhearts.mp3"},
+	{titulo: "sing to you", img: "shilohdynasty.PNG", artista: "shiloh dynasty", ft: "", favorito: false, fundo: "", caminho: "singtoyou.mp3"},
+	{titulo: "revenge", fundo: "tentacioncapa.JPG", artista: "xxxtentacion", ft: "", img: "xxxtentacion.jpg", favorito: false, caminho: "revenge.mp3"},
 	{titulo: "fuck love", fundo: "tentacioncapa.JPG", artista: "xxxtentacion", ft: "trippie redd", favorito: false, img: "xxxtentacion.jpg", caminho: "fucklove.mp3"},
+	{titulo: "Feen", fundo: "", artista: "luh kel", ft: "trippie redd", favorito: false, img: "luhkel.JPG", caminho: "feen.mp3"},
+	{titulo: "wishing well", fundo: "lengedsneverdie.PNG", artista: "juice wrld", ft: "", favorito: false, img: "juicewrld.JPEG", caminho: "wishingwell.mp3"},
+	{titulo: "armed and dangerous", fundo: "", artista: "juice wrld", ft: "", favorito: false, img: "juicewrld.JPEG", caminho: "armedanddangerous.mp3"},
 	{titulo: "smile", fundo: "lengedsneverdie.PNG", artista: "juice wrld", ft: "the weeknd", favorito: false, img: "juicewrld.JPEG", caminho: "smile.mp3"},
-	
+	{titulo: "Going down", fundo: "", artista: "xxxtentacion", ft: "", favorito: false, img: "xxxtentacion.jpg", caminho: "goingdown.mp3"},
+	{titulo: "Percaholic", fundo: "", artista: "Juice WRLD", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "percaholic.mp3"},
+	{titulo: "Tales of the toxic", fundo: "", artista: "Juice wrld", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "talesofthetoxic.mp3"},
+	{titulo: "I’ll keep you safe ", fundo: "", artista: "Shiloh Dynasty", ft: "", favorito: false, img: "shilohdynasty.PNG", caminho: "illkeepyousafe.mp3"},
+	{titulo: "Angel", fundo: "", artista: "xxxtentacion", ft: "shiloh dynasty", favorito: false, img: "xxxtentacion.jpg", caminho: "angel.mp3"},
+	{titulo: "Danny Phantom", fundo: "trippiereddcapa.PNG", artista: "Trippie redd", ft: "xxxtentacion", favorito: false, img: "trippie.JPG", caminho: "dannyphantom.mp3"},
+	{titulo: "True Love", fundo: "", artista: "Juice wrld", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "truelove.mp3"},
+	{titulo: "Die for you", fundo: "", artista: "the weeknd", ft: "", favorito: false, img: "theweeknd.JPG", caminho: "dieforyou.mp3"},
+	{titulo: "Holy Smokes", fundo: "holysmokes.JPG", artista: "Trippie redd", ft: "lil uzi vert", favorito: false, img: "trippie.JPG", caminho: "holysmoke.mp3"},
+	{titulo: "Try me", fundo: "", artista: "The weeknd", ft: "", favorito: false, img: "theweeknd.JPG", caminho: "tryme.mp3"},
+       {titulo: "One dance", fundo: "onedance.PNG", artista: "drake", ft: "kyla & wizkid", favorito: false, img: "drake.JPEG", caminho: "onedance.mp3"},
+
+{titulo: "I’m here", fundo: "", artista: "last-dude", ft: "juice wrld, xxxtentacion & lil peep", img: "", favorito: false, caminho: "imhere.mp3"},
+
+{titulo: "need to know", fundo: "", artista: "Doja cat", ft: "", img: "dojacat1.JPEG", favorito: false, caminho: "needtoknow.mp3"},
+{titulo: "holy-smokes", fundo: "holysmokes.JPG", artista: "instrumental", ft: "", img: "", favorito: false, caminho: "holysmokebeat.mp3"},
+
+{titulo: "Moonlight", fundo: "", artista: "xxxtentacion", ft: "", favorito: false, img: "xxxtentacion.jpg", caminho: "moonlight.mp3"},
+
+{titulo: "Maybe", fundo: "", artista: "Juice WRLD", ft: "", favorito: false, img: "juicewrld.PNG", caminho: "maybe.mp3"},
+
 ];
 
 var musicasFavoritas = [];
@@ -41,8 +106,14 @@ titulo = document.querySelector(".titulo");
 
 var msaImg = document.querySelector(".fundo-msa img");
 
+var msg2 = document.getElementById("msg2");
+var msg = document.getElementById("msg");
+
 var estaAberto = false,
 estaMovendo = false;
+
+var lArtista = document.getElementById("l-artista"),
+	lTitulo = document.getElementById("l-titulo");
 
 var pesquisar = document.querySelector("#pesquisar"),
 titulomusicaAtualTelaCheia = document.querySelector(".titulo--musica-atual-tela-cheia");
@@ -79,16 +150,18 @@ function adicionarMusica(objeto) {
 	};
 	
 	objeto.ft == ""? titulo.innerHTML = objeto.titulo + '<br><small class="artista">' + objeto.artista + '</small>': titulo.innerHTML = objeto.titulo + '<br><small class="artista">' + objeto.artista + ' ft ' + objeto.ft + '</small>';
+	lArtista.textContent = objeto.artista;
+	lTitulo.textContent = objeto.titulo;
 
 document.querySelector("title").textContent = objeto.titulo + " - " + objeto.artista;
 	
 	audio.src = "musica/" + objeto.caminho;
 	
 	if (objeto.favorito) {
-		addF.setAttribute('fill', 'red');
-		addF.style.color = 'red';
+		addF.firstChild.className = "bx bxs-heart";
+		addF.style.color = 'mediumslateblue';
 	} else {
-		addF.setAttribute('fill', 'none');
+		addF.firstChild.className = "bx bx-heart";
 		addF.style.color = 'black';
 	}
 	objeto.ft == ""?tituloMusicaAtual.innerHTML = objeto.titulo.toLowerCase() + '<br><small class="artista">' + objeto.artista.toLowerCase() + '</small>': tituloMusicaAtual.innerHTML = objeto.titulo.toLowerCase() + '<br><small class="artista">' + objeto.artista.toLowerCase() + ' ft '+ objeto.ft.toLowerCase() + '</small>';
@@ -114,18 +187,20 @@ document.querySelector("title").textContent = objeto.titulo + " - " + objeto.art
 /* adicionar música favorita*/
 
 function adicionarMusicaFavoritaTC() {
+	
 
 	var musicaFavorita = document.createElement('div');
 	musicaFavorita.className = 'item';
 	var indece;
 	
+	
 		if (musicas[posicaoMusicaAtual()].favorito !== true) {
 		
 			musicas[posicaoMusicaAtual()].favorito = true;
 			
-			addF.setAttribute('fill', 'mediumSlateBlue');
+			addF.style.color = "mediumslateblue";
 			
-			addF.style.color = 'mediumSlateBlue';
+			addF.firstChild.className = "bx bxs-heart";
 			
 			info.textContent = '';
 			
@@ -134,15 +209,32 @@ function adicionarMusicaFavoritaTC() {
 			
 			musicasFavoritas.push(musicaFavorita.lastChild.firstChild.nodeValue, musicaFavorita);
 			cntrFavorito.appendChild(musicaFavorita);
+
+          setTimeout(() => {
+				
+				msg2.className = "mostrar";
+				setTimeout(function() { 
+					msg2.className = msg2.className.replace("mostrar", ""); 
+				}, 2900);
+			}, 200);
+
 			
 		} else {
+
 			
 			addF.style.color = 'black';
+			addF.firstChild.className = "bx bx-heart";
 			
 			musicas[posicaoMusicaAtual()].favorito = false;
 			
-			indece = musicasFavoritas.indexOf(musicas[posicaoMusicaAtual()].titulo);
+			indece = musicasFavoritas.indexOf(musicas[posicaoMusicaAtual()].titulo.toLowerCase());
 			cntrFavorito.removeChild(musicasFavoritas[indece + 1]);
+
+msg.className = "mostrar";
+	setTimeout(function() { 
+		msg.className = msg.className.replace("mostrar", ""); 
+	}, 2900);
+
 			
 			if (indece  != -1) {
 				musicasFavoritas.splice(indece + 1, 1);
@@ -262,8 +354,11 @@ pesquisar.addEventListener('focus', () => {
 		
 		for (var i in itens) {
 			if (itens[i].textContent.indexOf(valorE) !== - 1) {
-				itens[i].style.display = 'flex';
-
+				
+					
+					itens[i].style.display = 'flex';
+					
+				
 			} else {
 				itens[i].style.display = "none";
                     }
@@ -458,6 +553,9 @@ volume.addEventListener('input', function () {
 var btnCancelar = document.querySelector('.btn-cancelar');
 
 var modo = document.querySelector('#modo-escuro input');
+
+//modo-escuro
+
 modo.addEventListener('change', function () {
 var corpo = document.querySelector('.corpo');
 		if (modo.checked) {
@@ -475,17 +573,18 @@ var corpo = document.querySelector('.corpo');
 			musicaAtual.classList.add('modo-escuro-ativo');
 			
 			musicaAtualTelaCheia.classList.add('modo-escuro-ativo');
+lyrics.style.backgroundColor = "rgb(50, 50, 50)";
+lyrics.style.color = "white";
+
+containerLyrics.style.background = "rgb(60, 60, 60)";
+
+containerLyrics.style.color = "white";
 
 slider.style.background = "rgb(60, 60, 60)";
 
 slider.style.color = "white";
-
 			
 			titulo.style.color = "white";
-			
-			prox.style.backgroundColor = 'rgb(80, 80, 80)';
-			
-			ant.style.backgroundColor = 'rgb(80, 80, 80)';
 			
 			itemDaNav[0].parentNode.style.background = 'rgb(60, 60, 60)';
 			
@@ -501,7 +600,11 @@ slider.style.color = "white";
 				item.classList.remove('modo-escuro-ativo');
 			
 			});
-			
+			lyrics.style.backgroundColor = "white";
+lyrics.style.color = "black";
+
+containerLyrics.style.background = "ghostwhite";
+			containerLyrics.style.color = "black";
 			musicaAtualTelaCheia.classList.remove('modo-escuro-ativo');
 			
 			musicaAtual.classList.remove('modo-escuro-ativo');
@@ -511,9 +614,7 @@ slider.style.color = "white";
 			
 			titulo.style.color = "black";
 			
-			prox.style.backgroundColor = 'rgb(240, 240, 245)';
 			
-			ant.style.backgroundColor = 'rgb(240, 240, 245)';
 			pp[0].style.backgroundColor = 'ghostWhite';
 			pp[1].style.backgroundColor = 'rgb(240, 240, 240)';
                     
@@ -531,7 +632,11 @@ function definirIdioma() {
 	modoEscuroTitulo = document.querySelector('#modo-escuro .titulo--difinicao');
 	
 	if (select.value === "pt") {
-	
+		document.querySelector('.navMusica span').textContent = 'início'; 
+		
+		document.querySelector('.navConf span').textContent = 'configuração'; 
+		
+		document.querySelector('.navFavorito span').textContent = 'favoritos'; 
 		
 		idioma.textContent = 'idioma';
 		
@@ -546,9 +651,14 @@ function definirIdioma() {
 		
 	} else if (select.value === "en") {
 	
+		document.querySelector('.navMusica span').textContent = 'home'; 
 		
+		document.querySelector('.navConf span').textContent = 'setting'; 
+		
+		document.querySelector('.navFavorito span').textContent = 'favorite'; 
 		
 		idioma.textContent = 'language';
+		
 		
 		modoEscuroTitulo.textContent = 'dark mode';
 		
@@ -598,6 +708,34 @@ btnAleatorio.addEventListener("click", function() {
    ant.removeEventListener("click", musicaAleatoria, false);
 btnAleatorio.firstChild.classList.remove("verdade");
   }
+}, false);
+
+var containerLyrics = document.querySelector(".containerLyrics");
+
+ document.querySelector("#abrirLyric").addEventListener("click", () => {
+	getLyrics(musicas[posicaoMusicaAtual()].artista, musicas[posicaoMusicaAtual()].titulo);
+
+	lyrics.appendChild(load);
+
+	containerLyrics.style.display = 'block';
+	
+		containerLyrics.style.transition = "transform .27s ease";
+		
+		containerLyrics.style.transform = 'translateX(100%)';
+		setTimeout(function() { 
+                 containerLyrics.style.transform = "translateX(0)";
+             }, 10);
+	
+}, false);
+
+document.querySelector("#fecharLyric").addEventListener("click", () => {
+	containerLyrics.style.transform = "translateX(100%)";
+	containerLyrics.style.transition = 'transform .27s';
+	setTimeout(function() { 
+                 containerLyrics.style.transform = "translateX(100%)";
+             }, 10);
+	
+	
 }, false);
 
 /* #FIM (@_@) */
